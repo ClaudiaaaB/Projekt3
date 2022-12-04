@@ -50,9 +50,68 @@ td {
 table {
   width: 100%;
 }
+.income {
+  padding-left: 138px;
+}
+.expenses {
+  padding-left: 150px;
+}
 .button {
   text-align: right;
+  position: relative;
+  bottom: 20px;
+  padding-right: 10px;
+  background-color: transparent;
+  border: none;
+  bottom: 42px;
 }
+
 .end-budget {
   text-align: center;
+  padding-top: 93px;
+}
+.input {
+  display: block;
+  position: relative;
+  padding-right: 2px;
+}
+
+.inputs {
+  padding: 2px;
+}
+.input-input {
+  font-size: 11px;
+  font-family: inherit;
+  padding: 7px;
+  border-radius: 8px;
+  background-color: rgb(226, 225, 225);
+  width: 180px;
+  display: block;
+  border-bottom: 3px;
+  transition: border-color 0.3s ease-in;
+}
+.input-input:focus {
+  outline: none;
+  border-bottom: 2px solid;
+  color: rgb(38, 209, 221);
+}
+.input-label {
+  font-size: 3px;
+  font-weight: 70px;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  transition: opacity 0.3s ease-in, transform 0s;
+}
+.informaction {
+  padding-left: 20px;
+}
+
+.error {
+  margin-bottom: 20px;
+  color: red;
+  font-size: 6px;
+}
+.hide {
+  visibility: hidden;
 }

@@ -18,83 +18,94 @@
 
     <main class="budget">
       <section class="budget-form">
+       
 
         <table>
           <tr>
-            <th>Przychody
+            <th><p class="income"> Przychody</p>
               <ul class="inputs">
+                <p class="error hide" data-error>
+                  Pole nie może być puste
+                </p>
+
               <p class="input">
-                <input type="text" name="value" id="value" class="input-input" />
-                <label for="value" class="input-label">Kwota</label>
+                <input type="text" name="value" id="value" class="input-input" placeholder="Nazwa przychodu" checked/>
+                <label for="value" class="input-label"></label>
               </p>
+
+
               <p class="input">
-                <input type="text" name="value2" id="value2" class="input-input" />
-                <label for="value2" class="input-label">Nazwa przychodu</label>
-              </p>
-              <p class="input">
-                <input type="text" name="value3" id="value3" class="input-input" />
-                <label for="value3" class="input-label">Dodaj</label>
+                <input type="text" name="value2" id="value2" class="input-input" placeholder="Kwota" checked/>
+                <label for="value2" class="input-label"></label>
               </p>
               </ul>
+              <div class="button"data-enter-button>
+              <button>Dodaj</button>
+            </div>
             </th>
             
-            <th>Wydatki
+            <th><p class="expenses"> Wydatki</p>
+              <ul class="inputs">
+                <p class="error hide" data-error>
+                  Pole nie może być puste
+                </p>
               <p class="input">
-                <input type="text" name="value4" id="value4" class="input-input" />
-                <label for="value4" class="input-label">Kwota</label>
+                <input type="text" name="value4" id="value4" class="input-input" placeholder="Nazwa wydatku" />
+                <label for="value4" class="input-label"></label>
               </p>
     
               <p class="input">
-                <input type="text" name="value5" id="value5" class="input-input" />
-                <label for="value5" class="input-label">Nazwa przychodu</label>
+                <input type="text" name="value5" id="value5" class="input-input" placeholder="Kwota" />
+                <label for="value5" class="input-label"></label>
               </p>
-              <p class="input">
-                <input type="text" name="value6" id="value6" class="input-input" />
-                <label for="value6" class="input-label">Dodaj</label>
-              </p>
+              </ul>
+              <div class="button"data-enter-button>
+                <button>Dodaj</button>
+              </div>
+
             </th>
           </tr>
           <tr>
-            <td>Pensja - 3000zł
-              <div class="button">
+            <td><p class="informaction" data-item-description> Pensja - 3000zł</p>
+              <div class="button" data-enter-button>
                 <button>Edytuj</button>
                 <button>Usuń</button>
               </div>
             </td>
-            <td>Rachunki - 2000zł
-              <div class="button">
+            <td><p class="informaction"data-item-description>Rachunki - 2000zł</p>
+              <div class="button"data-enter-button>
                 <button>Edytuj</button>
                 <button>Usuń</button>
               </div>
             </td>
           </tr>
           <tr>
-            <td>Sprzedaż na Allegro - 500zł
-              <div class="button">
+            <td><p class="informaction"data-item-description>Sprzedaż na Allegro - 500zł</p>
+              <div class="button"data-enter-button>
                 <button>Edytuj</button>
                 <button>Usuń</button>
               </div>
             </td>
-            <td>Leasing - 2000zł
-              <div class="button">
+            <td><p class="informaction"data-item-description>Leasing - 2000zł</p>
+              <div class="button" data-enter-button>
                 <button>Edytuj</button>
                 <button>Usuń</button>
               </div>
             </td>
           </tr>
             <tr>
-            <td>Zlecenia - 2000zł
-              <div class="button">
+            <td><p class="informaction"data-item-description>Zlecenia - 2000zł</p>
+              <div class="button" data-enter-button>
                 <button>Edytuj</button>
                 <button>Usuń</button>
-                <p class="end-budget">Suma przychodów - 5500zł</p>
+                <p class="end-budget" data-total-budget>Suma przychodów - 5500zł</p>
               </div>
             </td>
-            <td>Inne - 513zł
-              <div class="button">
+            <td><p class="informaction"data-item-description>Inne - 513zł</p>
+              <div class="button" data-enter-button>
                 <button>Edytuj</button>
                 <button>Usuń</button>
-                <p class="end-budget">Suma wydatków - 4513zł</p>
+                <p class="end-budget" data-total-budget>Suma wydatków - 4513zł</p>
               </div>
             </td>
           </tr>
@@ -119,5 +130,9 @@
       </section>
     </main>
     <script src="/index.js"></script>
+  <script> const app = new BudgetApp();
+    app.initializeApp();
+
+  </script>
   </body>
 </html>
