@@ -18,121 +18,73 @@
 
     <main class="budget">
       <section class="budget-form">
-       
-
         <table>
           <tr>
-            <th><p class="income"> Przychody</p>
-              <ul class="inputs">
-                <p class="error hide" data-error>
-                  Pole nie może być puste
-                </p>
-
-              <p class="input">
-                <input type="text" name="value" id="value" class="input-input" placeholder="Nazwa przychodu" checked/>
-                <label for="value" class="input-label"></label>
-              </p>
-
-
-              <p class="input">
-                <input type="text" name="value2" id="value2" class="input-input" placeholder="Kwota" checked/>
-                <label for="value2" class="input-label"></label>
-              </p>
-              </ul>
-              <div class="button"data-enter-button>
-              <button>Dodaj</button>
-            </div>
+            <th>
+              <p class="income">Przychody</p>
+              <div class="inputs">
+                <input
+                  type="text"
+                  name="value"
+                  id="new-revenue"
+                  class="input-input"
+                  placeholder="Nazwa przychodu"
+                  checked
+                />
+                <input
+                  type="text"
+                  name="value2"
+                  id="amount-revenue"
+                  class="input-input"
+                  placeholder="Kwota"
+                  checked
+                />
+                <button id="button-revenue">Dodaj</button>
+              </div>
             </th>
-            
-            <th><p class="expenses"> Wydatki</p>
-              <ul class="inputs">
-                <p class="error hide" data-error>
-                  Pole nie może być puste
-                </p>
-              <p class="input">
-                <input type="text" name="value4" id="value4" class="input-input" placeholder="Nazwa wydatku" />
-                <label for="value4" class="input-label"></label>
-              </p>
-    
-              <p class="input">
-                <input type="text" name="value5" id="value5" class="input-input" placeholder="Kwota" />
-                <label for="value5" class="input-label"></label>
-              </p>
-              </ul>
-              <div class="button"data-enter-button>
-                <button>Dodaj</button>
-              </div>
 
+            <th>
+              <p class="expenses">Wydatki</p>
+              <div class="inputs-expenses">
+                <input
+                  type="text"
+                  name="value-expenses"
+                  id="new-expenses"
+                  class="input-input"
+                  placeholder="Nazwa wydatku"
+                />
+                <input
+                  type="text"
+                  name="value5"
+                  id="amount-expenses"
+                  class="input-input"
+                  placeholder="Kwota"
+                />
+
+                <button id="button-expenses">Dodaj</button>
+              </div>
             </th>
           </tr>
+
           <tr>
-            <td><p class="informaction" data-item-description> Pensja - 3000zł</p>
-              <div class="button" data-enter-button>
-                <button>Edytuj</button>
-                <button>Usuń</button>
-              </div>
+            <td id="revenue-container">
+              <div id="revenue-items"></div>
+              <p class="end-budget">
+                Suma przychodów : <span id="total-revenue"></span>
+              </p>
             </td>
-            <td><p class="informaction"data-item-description>Rachunki - 2000zł</p>
-              <div class="button"data-enter-button>
-                <button>Edytuj</button>
-                <button>Usuń</button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><p class="informaction"data-item-description>Sprzedaż na Allegro - 500zł</p>
-              <div class="button"data-enter-button>
-                <button>Edytuj</button>
-                <button>Usuń</button>
-              </div>
-            </td>
-            <td><p class="informaction"data-item-description>Leasing - 2000zł</p>
-              <div class="button" data-enter-button>
-                <button>Edytuj</button>
-                <button>Usuń</button>
-              </div>
+
+            <td id="expenses-container">
+              <div id="expenses-items"></div>
+
+              <p class="end-budget-expenses">
+                Suma wydatków : <span id="total-expenses"></span>
+              </p>
             </td>
           </tr>
-            <tr>
-            <td><p class="informaction"data-item-description>Zlecenia - 2000zł</p>
-              <div class="button" data-enter-button>
-                <button>Edytuj</button>
-                <button>Usuń</button>
-                <p class="end-budget" data-total-budget>Suma przychodów - 5500zł</p>
-              </div>
-            </td>
-            <td><p class="informaction"data-item-description>Inne - 513zł</p>
-              <div class="button" data-enter-button>
-                <button>Edytuj</button>
-                <button>Usuń</button>
-                <p class="end-budget" data-total-budget>Suma wydatków - 4513zł</p>
-              </div>
-            </td>
-          </tr>
-      
         </table>
-
-
-        
-
-
-
-
-
-
-
-        
-        
-
-
-
-        </ul>
       </section>
     </main>
     <script src="/index.js"></script>
-  <script> const app = new BudgetApp();
-    app.initializeApp();
-
-  </script>
   </body>
 </html>
