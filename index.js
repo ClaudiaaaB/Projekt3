@@ -1,100 +1,3 @@
-// class BudgetApp {
-//   valueInput = null;
-//   value2Input = null;
-//   value3Input = null;
-//   value4Input = null;
-//   value5Input = null;
-//   value6Input = null;
-//   enterButton = null;
-//   error = null;
-
-//   numberOfItems = 0;
-
-//   Selectors = {
-//     valueInput: "value",
-//     value2Input: "value2",
-//     value3Input: "value3",
-//     value4Input: "value4",
-//     value5Input: "value5",
-//     value6Input: "value6",
-//     enterButton: "[data-enter-button]",
-//     itemDescription: "[data-item-description]",
-//     totalBudget: "[data-total-budget]",
-//     error: "[data-error]",
-//   };
-
-//   initializeApp() {
-//     this.enterButton = document.querySelector(this.Selectors.enterButton);
-//     this.descriptionInput = document.getElementById(
-//       this.Selectors.descriptionInput
-//     );
-
-//     this.valueInput = document.getElementById(this.Selectors.valueInput);
-//     this.value2Input = document.getElementById(this.Selectors.value2Input);
-//     this.value3Input = document.getElementById(this.Selectors.value3Input);
-//     this.value4Input = document.getElementById(this.Selectors.value4Input);
-//     this.value5Input = document.getElementById(this.Selectors.value5Input);
-//     this.value6Input = document.getElementById(this.Selectors.value6Input);
-//     this.totalBudget = document.querySelector(this.Selectors.totalBudget);
-//     this.error = document.querySelector(this.Selectors.error);
-//     this.addEventListeners;
-//   }
-
-//   addEventListeners() {
-//     this.enterButton.addEventListeners("click", () => this.addItem());
-//   }
-
-//   addItem() {
-//     const newItem = this.getInputValues();
-//     if (!newItem) {
-//       this.showError();
-//     }
-//   }
-
-//   element.insertAdjacentHTML("beforeend", this.createItem(newItem.id, newItem.value, newItem.isEdit, newItem.description ));
-
-//   this.numberOfItems++;
-
-//   createItem(id,isPositive, description, price) {
-//     retur;
-//   }
-
-//   getInputValues() {
-//     const value = this.valueInput.value;
-//     const descriptionInput = this.descriptionInput.value;
-//     const isEdit = !this.inputInput.checked;
-
-//     if (value > 0 && description) {
-//       return {
-//         id: this.numberOfItems,
-//         isEdit,
-//         value,
-//         description,
-//       };
-//     }
-
-//     return null;
-//   }
-
-//   showError() {
-//     this.error.classList.remove("hide");
-//   }
-//   hideError() {
-//     this.error.classList.add("hide");
-//   }
-// }
-
-// function dodaj() {
-//   var nazwaPrzychodu = parseInt(
-//     document.getElementById("nazwaPrzychodu").value
-//   );
-//   var kwota = parseInt(document.getElementById("kwota").value);
-//   var wynik1 = nazwaPrzychodu + kwota;
-//   document.getElementById("wynik").innerHTML = wynik1;
-
-//   console.log ("nazwaPrzychodu"+"kwota")
-// }
-
 let iterator = 0;
 let sumRevenue = 0;
 let sumExpenses = 0;
@@ -174,6 +77,11 @@ const addNewElement = () => {
     console.log(p);
     console.log(amountRevenue.value);
   });
+
+  // buttonDelete.addEventListener("click", () => {
+  //   amountRevenue();
+  //   console.log(totalRevenue.value - amountRevenue.value);
+  // });
 
   iterator = iterator + 1;
 };
