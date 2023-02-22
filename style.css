@@ -4,11 +4,8 @@ body {
 }
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   padding-top: 5px;
-  margin-left: 50%;
+  margin-left: 40%;
 }
 .budget-form {
   background-color: white;
@@ -50,10 +47,10 @@ td {
   border-right: 1px solid;
 }
 .income {
-  padding-left: 138px;
+  padding-left: 10%;
 }
 .expenses {
-  padding-left: 150px;
+  padding-left: 10%;
 }
 .button {
   text-align: right;

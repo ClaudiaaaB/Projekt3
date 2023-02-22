@@ -14,6 +14,9 @@
   <body>
     <header class="header">
       <h1 class="header-heading">Budget App</h1>
+      <h3 class="expenses-budget">
+        Możesz jeszcze wydać złotych<span id="total-budget"></span>
+      </h3>
     </header>
 
     <main class="budget">
@@ -29,15 +32,13 @@
                   id="new-revenue"
                   class="input-input"
                   placeholder="Nazwa przychodu"
-                  checked
                 />
                 <input
-                  type="text"
+                  type="number"
                   name="value2"
                   id="amount-revenue"
                   class="input-input"
                   placeholder="Kwota"
-                  checked
                 />
                 <button id="button-revenue">Dodaj</button>
               </div>
@@ -54,7 +55,7 @@
                   placeholder="Nazwa wydatku"
                 />
                 <input
-                  type="text"
+                  type="number"
                   name="value5"
                   id="amount-expenses"
                   class="input-input"

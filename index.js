@@ -3,18 +3,34 @@ let sumRevenue = 0;
 let sumExpenses = 0;
 const totalRevenue = document.getElementById("total-revenue");
 const totalExpenses = document.getElementById("total-expenses");
+// const totalBudget = document.getElementById("total-budget");
 totalRevenue.innerText = sumRevenue;
 totalExpenses.innerText = sumExpenses;
+// totalBudget.innerHTML = sumBudget;
 
 const buttonRevenue = document.getElementById("button-revenue");
 buttonRevenue.addEventListener("click", () => {
   addNewElement();
 });
+const amountRevenue = document.getElementById("amount-revenue");
+amountRevenue.addEventListener("change", (event) => {
+  console.log(event.target.value);
+  if (event.target.value < 0) {
+    alert("wpisz wartość większą niż 0");
+  }
+});
+// const inputValue = document.getElementById("input");
+// inputValue.addEventListener("change", (event) => {
+//   console.log(event.target.value);
+//   if (event.target.value < 0) {
+//     alert("wpisz wartość większą niż 0");
+//   }
+// });
 
 const addNewElement = () => {
   const revenueContainer = document.getElementById("revenue-items");
   const nameOfRevenue = document.getElementById("new-revenue");
-  const amountRevenue = document.getElementById("amount-revenue");
+
   const p = document.createElement("p");
   p.innerHTML = nameOfRevenue.value + amountRevenue.value;
   p.className = "paragraf";
@@ -78,10 +94,10 @@ const addNewElement = () => {
     console.log(amountRevenue.value);
   });
 
-  // buttonDelete.addEventListener("click", () => {
-  //   amountRevenue();
-  //   console.log(totalRevenue.value - amountRevenue.value);
-  // });
+  buttonDelete.addEventListener("click", () => {
+    sumRevenue = sumRevenue - Number(amountRevenue.value);
+    totalRevenue.innerText = sumRevenue;
+  });
 
   iterator = iterator + 1;
 };
@@ -90,10 +106,18 @@ const buttonExpenses = document.getElementById("button-expenses");
 buttonExpenses.addEventListener("click", () => {
   addNewExpensesElement();
 });
+
+const amountExpenses = document.getElementById("amount-expenses");
+amountExpenses.addEventListener("change", (event) => {
+  console.log(event.target.value);
+  if (event.target.value < 0) {
+    alert("wpisz wartość większą niż 0");
+  }
+});
+
 const addNewExpensesElement = () => {
   const ExpensesContainer = document.getElementById("expenses-items");
   const nameOfExpenses = document.getElementById("new-expenses");
-  const amountExpenses = document.getElementById("amount-expenses");
 
   const p = document.createElement("p");
   p.innerHTML = nameOfExpenses.value + amountExpenses.value;
@@ -159,5 +183,10 @@ const addNewExpensesElement = () => {
     console.log(p);
     console.log(amountExpenses.value);
   });
+  buttonDeleteExpenses.addEventListener("click", () => {
+    sumExpenses = sumExpenses - Number(amountExpenses.value);
+    totalExpenses.innerText = sumExpenses;
+  });
+
   iterator = iterator + 1;
 };
