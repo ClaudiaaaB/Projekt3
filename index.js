@@ -1,16 +1,17 @@
 let iterator = 0;
 let sumRevenue = 0;
 let sumExpenses = 0;
+let sumBudget = 0;
 const totalRevenue = document.getElementById("total-revenue");
 const totalExpenses = document.getElementById("total-expenses");
-// const totalBudget = document.getElementById("total-budget");
+
 totalRevenue.innerText = sumRevenue;
 totalExpenses.innerText = sumExpenses;
-// totalBudget.innerHTML = sumBudget;
 
 const buttonRevenue = document.getElementById("button-revenue");
 buttonRevenue.addEventListener("click", () => {
   addNewElement();
+  updateTotalBudget();
 });
 const amountRevenue = document.getElementById("amount-revenue");
 amountRevenue.addEventListener("change", (event) => {
@@ -19,13 +20,13 @@ amountRevenue.addEventListener("change", (event) => {
     alert("wpisz wartość większą niż 0");
   }
 });
-// const inputValue = document.getElementById("input");
-// inputValue.addEventListener("change", (event) => {
-//   console.log(event.target.value);
-//   if (event.target.value < 0) {
-//     alert("wpisz wartość większą niż 0");
-//   }
-// });
+
+const updateTotalBudget = () => {
+  const totalBudget = document.getElementById("total-budget");
+  sumBudget = sumRevenue - sumExpenses;
+  console.log(sumBudget);
+  totalBudget.innerHTML = sumBudget;
+};
 
 const addNewElement = () => {
   const revenueContainer = document.getElementById("revenue-items");
@@ -73,8 +74,19 @@ const addNewElement = () => {
     inputAmount.hidden = true;
     p.hidden = false;
     p.innerText = inputValue.value + inputAmount.value;
+    console.log("spr button save", inputAmount.value, amountRevenue.value);
     buttonEdit.hidden = false;
+    sumRevenue = sumRevenue + (inputAmount.value - amountRevenue.value);
+    totalRevenue.innerText = sumRevenue;
   });
+
+  // const inputValue = document.getElementById("input");
+  // inputValue.addEventListener("change", (event) => {
+  //   console.log(event.target.value);
+  //   if (event.target.value < 0) {
+  //     alert("wpisz wartość większą niż 0");
+  //   }
+  // });
 
   const div = document.createElement("div");
   div.appendChild(p);
@@ -105,6 +117,7 @@ const addNewElement = () => {
 const buttonExpenses = document.getElementById("button-expenses");
 buttonExpenses.addEventListener("click", () => {
   addNewExpensesElement();
+  updateTotalBudget();
 });
 
 const amountExpenses = document.getElementById("amount-expenses");
@@ -163,8 +176,25 @@ const addNewExpensesElement = () => {
     inputAmountExpenses.hidden = true;
     p.hidden = false;
     p.innerText = inputValueExpenses.value + inputAmountExpenses.value;
+
+    console.log(
+      "spr button save",
+      inputAmountExpenses.value,
+      amountExpenses.value
+    );
     buttonEditExpenses.hidden = false;
+    sumExpenses =
+      sumExpenses + (inputAmountExpenses.value - amountExpenses.value);
+    totalExpenses.innerText = sumExpenses;
   });
+
+  // const inputValueExpenses = document.getElementById("input");
+  // inputValueExpenses.addEventListener("change", (event) => {
+  //   console.log(event.target.value);
+  //   if (event.target.value < 0) {
+  //     alert("wpisz wartość większą niż 0");
+  //   }
+  // });
 
   const div = document.createElement("div");
   div.appendChild(p);
