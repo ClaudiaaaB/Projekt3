@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget App</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header-heading">Budget App</h1>
+      <h3 class="expenses-budget">
+        Możesz jeszcze wydać złotych: <span id="total-budget"></span>
+      </h3>
+    </header>
+
+    <main class="budget">
+      <section class="budget-form">
+        <table>
+          <tr>
+            <th>
+              <p class="income">Przychody</p>
+              <div class="inputs">
+                <input
+                  type="text"
+                  name="value"
+                  id="new-revenue"
+                  class="input-input"
+                  placeholder="Nazwa przychodu"
+                />
+                <input
+                  type="number"
+                  name="value2"
+                  id="amount-revenue"
+                  class="input-input"
+                  placeholder="Kwota"
+                />
+                <button id="button-revenue">Dodaj</button>
+              </div>
+            </th>
+            <th>
+              <p class="expenses">Wydatki</p>
+              <div class="inputs-expenses">
+                <input
+                  type="text"
+                  name="value-expenses"
+                  id="new-expenses"
+                  class="input-input"
+                  placeholder="Nazwa wydatku"
+                />
+                <input
+                  type="number"
+                  name="value5"
+                  id="amount-expenses"
+                  class="input-input"
+                  placeholder="Kwota"
+                />
+                <button id="button-expenses">Dodaj</button>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <td id="revenue-container">
+              <div id="revenue-items"></div>
+              <p class="end-budget">
+                Suma przychodów : <span id="total-revenue"></span>
+              </p>
+            </td>
+            <td id="expenses-container">
+              <div id="expenses-items"></div>
+              <p class="end-budget-expenses">
+                Suma wydatków : <span id="total-expenses"></span>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </section>
+    </main>
+    <script src="/index.js"></script>
+  </body>
+</html>

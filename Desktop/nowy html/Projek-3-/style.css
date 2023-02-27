@@ -1,0 +1,130 @@
+body {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+.header {
+  position: fixed;
+  padding-top: 5px;
+  margin-left: 40%;
+}
+.budget-form {
+  background-color: white;
+  flex: 1;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.budget {
+  flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+}
+.grid-container {
+  display: grid;
+  border: 4px solid;
+  background-color: #405d78;
+
+  padding-left: 50px;
+  padding-right: 52px;
+
+  justify-content: left;
+}
+
+table {
+  border: 1px solid;
+  text-align: left;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  border: 1px solid;
+}
+td {
+  border-right: 1px solid;
+}
+.income {
+  padding-left: 10%;
+}
+.expenses {
+  padding-left: 10%;
+}
+.button {
+  text-align: right;
+  position: relative;
+  bottom: 20px;
+  padding-right: 10px;
+  background-color: transparent;
+  border: none;
+  bottom: 42px;
+}
+
+.end-budget {
+  text-align: center;
+  padding-top: 93px;
+}
+.end-budget-expenses {
+  text-align: center;
+  padding-top: 93px;
+}
+
+.input {
+  display: block;
+  position: relative;
+  padding-right: 2px;
+}
+
+.inputs {
+  justify-content: space-around;
+  display: flex;
+}
+.input-input {
+  font-size: 11px;
+  font-family: inherit;
+  padding: 7px;
+  border-radius: 8px;
+  background-color: rgb(226, 225, 225);
+  width: 180px;
+  display: block;
+  border-bottom: 3px;
+  transition: border-color 0.3s ease-in;
+}
+.input-input:focus {
+  outline: none;
+  border-bottom: 2px solid;
+  color: rgb(38, 209, 221);
+}
+.inputs-expenses {
+  display: flex;
+  justify-content: space-around;
+}
+.input-label {
+  font-size: 3px;
+  font-weight: 70px;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  transition: opacity 0.3s ease-in, transform 0s;
+}
+.informaction {
+  padding-left: 20px;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.paragraf {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.revenu-item {
+  display: flex;
+}
+.expenses-item {
+  display: flex;
+}
