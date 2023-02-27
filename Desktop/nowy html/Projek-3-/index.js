@@ -20,7 +20,6 @@ amountRevenue.addEventListener("change", (event) => {
     alert("wpisz wartość większą niż 0");
   }
 });
-
 const updateTotalBudget = () => {
   const totalBudget = document.getElementById("total-budget");
   sumBudget = sumRevenue - sumExpenses;
