@@ -33,7 +33,7 @@ const addNewElement = () => {
   const nameOfRevenue = document.getElementById("new-revenue");
 
   const p = document.createElement("p");
-  p.innerHTML = nameOfRevenue.value + amountRevenue.value;
+  p.innerHTML = nameOfRevenue.value + " " + amountRevenue.value;
   p.className = "paragraf";
   sumRevenue = sumRevenue + Number(amountRevenue.value);
   console.log(sumRevenue);
@@ -78,6 +78,7 @@ const addNewElement = () => {
     buttonEdit.hidden = false;
     sumRevenue = sumRevenue + (inputAmount.value - amountRevenue.value);
     totalRevenue.innerText = sumRevenue;
+    updateTotalBudget();
   });
 
   const div = document.createElement("div");
@@ -125,7 +126,7 @@ const addNewExpensesElement = () => {
   const nameOfExpenses = document.getElementById("new-expenses");
 
   const p = document.createElement("p");
-  p.innerHTML = nameOfExpenses.value + amountExpenses.value;
+  p.innerHTML = nameOfExpenses.value + " " + amountExpenses.value;
   p.className = "paragraf";
   sumExpenses = sumExpenses + Number(amountExpenses.value);
   console.log(sumExpenses);
@@ -178,6 +179,7 @@ const addNewExpensesElement = () => {
     sumExpenses =
       sumExpenses + (inputAmountExpenses.value - amountExpenses.value);
     totalExpenses.innerText = sumExpenses;
+    updateTotalBudget();
   });
 
   const div = document.createElement("div");
