@@ -80,14 +80,6 @@ const addNewElement = () => {
     totalRevenue.innerText = sumRevenue;
   });
 
-  // const inputValue = document.getElementById("input");
-  // inputValue.addEventListener("change", (event) => {
-  //   console.log(event.target.value);
-  //   if (event.target.value < 0) {
-  //     alert("wpisz wartość większą niż 0");
-  //   }
-  // });
-
   const div = document.createElement("div");
   div.appendChild(p);
   div.appendChild(inputValue);
@@ -187,14 +179,6 @@ const addNewExpensesElement = () => {
       sumExpenses + (inputAmountExpenses.value - amountExpenses.value);
     totalExpenses.innerText = sumExpenses;
   });
-
-  // const inputValueExpenses = document.getElementById("input");
-  // inputValueExpenses.addEventListener("change", (event) => {
-  //   console.log(event.target.value);
-  //   if (event.target.value < 0) {
-  //     alert("wpisz wartość większą niż 0");
-  //   }
-  // });
 
   const div = document.createElement("div");
   div.appendChild(p);
