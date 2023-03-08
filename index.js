@@ -15,7 +15,6 @@ buttonRevenue.addEventListener("click", () => {
 });
 const amountRevenue = document.getElementById("amount-revenue");
 amountRevenue.addEventListener("change", (event) => {
-  console.log(event.target.value);
   if (event.target.value < 0) {
     alert("wpisz wartość większą niż 0");
   }
@@ -24,7 +23,6 @@ amountRevenue.addEventListener("change", (event) => {
 const updateTotalBudget = () => {
   const totalBudget = document.getElementById("total-budget");
   sumBudget = sumRevenue - sumExpenses;
-  console.log(sumBudget);
   totalBudget.innerHTML = sumBudget;
 };
 
@@ -36,7 +34,6 @@ const addNewElement = () => {
   p.innerHTML = nameOfRevenue.value + " " + amountRevenue.value;
   p.className = "paragraf";
   sumRevenue = sumRevenue + Number(amountRevenue.value);
-  console.log(sumRevenue);
   totalRevenue.innerText = sumRevenue;
 
   const buttonEdit = document.createElement("button");
@@ -68,13 +65,17 @@ const addNewElement = () => {
     buttonEdit.hidden = true;
   });
   buttonSave.addEventListener("click", () => {
+    if (inputAmount.value < 0) {
+      alert("wpisz wartość większą od 0");
+      return;
+    }
+
     buttonSave.hidden = true;
     inputValue.hidden = true;
-    console.log(inputValue.value);
     inputAmount.hidden = true;
     p.hidden = false;
     p.innerText = inputValue.value + inputAmount.value;
-    console.log("spr button save", inputAmount.value, amountRevenue.value);
+
     buttonEdit.hidden = false;
     sumRevenue = sumRevenue + (inputAmount.value - amountRevenue.value);
     totalRevenue.innerText = sumRevenue;
@@ -93,15 +94,13 @@ const addNewElement = () => {
   div.id = "revenu-item-" + iterator;
 
   buttonDelete.addEventListener("click", () => {
-    // const newIterator = buttonDelete.id.charAt(buttonDelete.id.length - 1);
     document.getElementById(div.id).remove();
-    console.log(p);
-    console.log(amountRevenue.value);
   });
 
   buttonDelete.addEventListener("click", () => {
     sumRevenue = sumRevenue - Number(amountRevenue.value);
     totalRevenue.innerText = sumRevenue;
+    updateTotalBudget();
   });
 
   iterator = iterator + 1;
@@ -115,7 +114,6 @@ buttonExpenses.addEventListener("click", () => {
 
 const amountExpenses = document.getElementById("amount-expenses");
 amountExpenses.addEventListener("change", (event) => {
-  console.log(event.target.value);
   if (event.target.value < 0) {
     alert("wpisz wartość większą niż 0");
   }
@@ -129,7 +127,6 @@ const addNewExpensesElement = () => {
   p.innerHTML = nameOfExpenses.value + " " + amountExpenses.value;
   p.className = "paragraf";
   sumExpenses = sumExpenses + Number(amountExpenses.value);
-  console.log(sumExpenses);
   totalExpenses.innerText = sumExpenses;
 
   p.innerHTML = nameOfExpenses.value + amountExpenses.value;
@@ -162,19 +159,19 @@ const addNewExpensesElement = () => {
     p.hidden = true;
     buttonEditExpenses.hidden = true;
   });
+
   buttonSaveExpenses.addEventListener("click", () => {
+    if (inputAmountExpenses.value < 0) {
+      alert("wpisz wartość większą od 0");
+      return;
+    }
+
     buttonSaveExpenses.hidden = true;
     inputValueExpenses.hidden = true;
-    console.log(inputValueExpenses.value);
     inputAmountExpenses.hidden = true;
     p.hidden = false;
     p.innerText = inputValueExpenses.value + inputAmountExpenses.value;
 
-    console.log(
-      "spr button save",
-      inputAmountExpenses.value,
-      amountExpenses.value
-    );
     buttonEditExpenses.hidden = false;
     sumExpenses =
       sumExpenses + (inputAmountExpenses.value - amountExpenses.value);
@@ -194,14 +191,12 @@ const addNewExpensesElement = () => {
   div.id = "expenses-item-" + iterator;
 
   buttonDeleteExpenses.addEventListener("click", () => {
-    // const newIterator = buttonDelete.id.charAt(buttonDelete.id.length - 1);
     document.getElementById(div.id).remove();
-    console.log(p);
-    console.log(amountExpenses.value);
   });
   buttonDeleteExpenses.addEventListener("click", () => {
     sumExpenses = sumExpenses - Number(amountExpenses.value);
     totalExpenses.innerText = sumExpenses;
+    updateTotalBudget();
   });
 
   iterator = iterator + 1;
