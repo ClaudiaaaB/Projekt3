@@ -15,7 +15,7 @@ buttonRevenue.addEventListener("click", () => {
 });
 const amountRevenue = document.getElementById("amount-revenue");
 amountRevenue.addEventListener("change", (event) => {
-  if (event.target.value < 0) {
+  if (event.target.value <= 0) {
     alert("wpisz wartość większą niż 0");
   }
 });
@@ -31,7 +31,12 @@ const addNewElement = () => {
   const nameOfRevenue = document.getElementById("new-revenue");
 
   const p = document.createElement("p");
-  p.innerHTML = nameOfRevenue.value + " " + amountRevenue.value;
+  p.innerHTML =
+    nameOfRevenue.value +
+    " " +
+    "<span class='amountrev'>" +
+    amountRevenue.value +
+    "</span>";
   p.className = "paragraf";
   sumRevenue = sumRevenue + Number(amountRevenue.value);
   totalRevenue.innerText = sumRevenue;
@@ -65,7 +70,7 @@ const addNewElement = () => {
     buttonEdit.hidden = true;
   });
   buttonSave.addEventListener("click", () => {
-    if (inputAmount.value < 0) {
+    if (inputAmount.value <= 0) {
       alert("wpisz wartość większą od 0");
       return;
     }
@@ -95,10 +100,7 @@ const addNewElement = () => {
 
   buttonDelete.addEventListener("click", () => {
     document.getElementById(div.id).remove();
-  });
-
-  buttonDelete.addEventListener("click", () => {
-    sumRevenue = sumRevenue - Number(amountRevenue.value);
+    sumRevenue = sumRevenue - Number(div.querySelector(".amountrev").innerText);
     totalRevenue.innerText = sumRevenue;
     updateTotalBudget();
   });
@@ -114,7 +116,7 @@ buttonExpenses.addEventListener("click", () => {
 
 const amountExpenses = document.getElementById("amount-expenses");
 amountExpenses.addEventListener("change", (event) => {
-  if (event.target.value < 0) {
+  if (event.target.value <= 0) {
     alert("wpisz wartość większą niż 0");
   }
 });
@@ -124,12 +126,19 @@ const addNewExpensesElement = () => {
   const nameOfExpenses = document.getElementById("new-expenses");
 
   const p = document.createElement("p");
-  p.innerHTML = nameOfExpenses.value + " " + amountExpenses.value;
+  p.innerHTML =
+    nameOfExpenses.value +
+    " " +
+    "<span class='amount'>" +
+    // "<span id='expensesamount" +
+    // iterator +
+    // "'" +
+    // ">" +
+    amountExpenses.value +
+    "</span>";
   p.className = "paragraf";
   sumExpenses = sumExpenses + Number(amountExpenses.value);
   totalExpenses.innerText = sumExpenses;
-
-  p.innerHTML = nameOfExpenses.value + amountExpenses.value;
 
   const buttonEditExpenses = document.createElement("button");
   buttonEditExpenses.textContent = "Edycja";
@@ -161,7 +170,7 @@ const addNewExpensesElement = () => {
   });
 
   buttonSaveExpenses.addEventListener("click", () => {
-    if (inputAmountExpenses.value < 0) {
+    if (inputAmountExpenses.value <= 0) {
       alert("wpisz wartość większą od 0");
       return;
     }
@@ -192,9 +201,7 @@ const addNewExpensesElement = () => {
 
   buttonDeleteExpenses.addEventListener("click", () => {
     document.getElementById(div.id).remove();
-  });
-  buttonDeleteExpenses.addEventListener("click", () => {
-    sumExpenses = sumExpenses - Number(amountExpenses.value);
+    sumExpenses = sumExpenses - Number(div.querySelector(".amount").innerText);
     totalExpenses.innerText = sumExpenses;
     updateTotalBudget();
   });
